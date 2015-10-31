@@ -3,7 +3,14 @@ var path = require('path');
 var bodyParser = require('body-parser');
 var app = express();
 var port = process.env.PORT || 3000;
+var passport = require('passport');
+var mongoose = require('mongoose');
+require('./models/User');
+require('./models/ProvideService');
+require('./models/RequestService');
+require('./config/passport');
 
+mongoose.connect('mongodb://localhost/Request-ProvideService');
 
 app.set('views', path.join(__dirname, 'views'));
 //set the view engine that will render HTML from the server to the client
@@ -20,10 +27,27 @@ app.set('view options', {
 //middleware that allows for us to parse JSON and UTF-8 from the body of an HTTP request
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
+app.use(passport.initialize());
+
+var UserRoutes = require('./routes/UserRoutes');
+var RequestServiceRoutes = require('./routes/RequestServiceRoutes');
+var ProvideServiceRoutes = require('./routes/ProvideServiceRoutes');
+
 
 //on homepage load, render the index page
 app.get('/', function(req, res) {
 	res.render('index');
+});
+
+app.use('/api/user', UserRoutes);
+app.use('/api/requestservice', RequestServiceRoutes);
+app.use('/api/provideservice', ProvideServiceRoutes);
+
+
+
+app.use(function(err,req,res,next){
+	console.log(err);
+	res.status(402).send(err);
 });
 
 var server = app.listen(port, function() {

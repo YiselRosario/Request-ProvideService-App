@@ -3,20 +3,57 @@
 <head>
 	<title>My App</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="bootstrap/dist/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="/css/bootstrap_theme.css">
+	<!-- <link rel="stylesheet" type="text/css" href="bootstrap/dist/css/bootstrap.min.css"> -->
+	<!-- <link rel="stylesheet" type="text/css" href="/css/bootstrap_theme.css"> -->
 	<link rel="stylesheet" type="text/css" href="/css/site.css">
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/animatecss/3.4.0/animate.min.css">
+	<link rel="stylesheet" href="/angular-material/angular-material.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.1.2/css/material-design-iconic-font.min.css"> -->
 </head>
-<body>
+<body ng-controller="GlobalController as nav" id="BackgroundColor">
+
+<!-- Top Menu Bar with: Title/Brand, Sign Up, Sign In, MenuButton and Logged Person Username-->
+  <md-content ng-cloak="">
+    <md-toolbar id="TopBarClear">
+      <div class="md-toolbar-tools">
+        <md-button class="md-icon-button" aria-label="Settings" ui-sref="Home">
+        	<i class="material-icons">more_vert</i>
+        </md-button>
+				<span flex=""></span>
+        <h2 style="color:white">
+          <span ng-show="nav.status.username"> Welcome Back {{nav.status.username}}! </span>
+        </h2>
+        <span flex=""></span>
+				 <!--TEST BUTTON -->
+					<md-button ng-click="nav.toggleRightRegister()" class="md-flat" ui-sref="Register">Register</md-button>
+				<!--TEST BUTTON -->
+					<md-button ng-click="nav.toggleRight()" class="md-flat" ui-sref="Login"> Sing In</md-button>
+
+
+        <!-- <md-button class="md-flat" ui-sref="Login_Register"> Sign Up </md-button>
+        <md-button class="md-flat" ui-sref="Login_Register"> Register </md-button> -->
+      </div>
+    </md-toolbar>
+	</md-content>
+
 	<ui-view></ui-view>
 	<!-- Ext Libs -->
 	<script src="angular/angular.min.js"></script>
 	<script src="angular-ui-router/release/angular-ui-router.min.js"></script>
+	<script src="angular-material/angular-material.min.js"></script>
+	<script src="angular-aria/angular-aria.min.js"></script>
+	<script src="angular-animate/angular-animate.min.js"></script>
 	<!-- Global Src -->
 	<script src="/javascript/app.js"></script>
 	<!-- Factories -->
 	<script src="/javascript/services/HomeFactory.js"></script>
+	<script src="/javascript/services/UserFactory.js"></script>
+	<script src="/javascript/services/AuthInterceptor.js"></script>
+
 	<!-- Controllers -->
 	<script src="/javascript/controllers/HomeController.js"></script>
+	<script src="/javascript/controllers/GlobalController.js"></script>
+
 </body>
 </html>

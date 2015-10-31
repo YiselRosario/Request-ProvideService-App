@@ -1,0 +1,41 @@
+
+<!-- Login: This Page works with the Global Controller -->
+
+<div layout="column" style="height:300px;" ng-cloak>
+      <section layout="row" flex>
+
+<!-- SIDE NAV RIGHT  -->
+        <md-sidenav class="md-sidenav-right md-whiteframe-z2" md-component-id="right">
+
+           <md-toolbar style="background-color: white; padding : " class="md-theme-light">
+             <h1 style="color : Black" class="md-toolbar-tools" >Sign In</h1>
+           </md-toolbar>
+
+           <md-content  layout-padding style="background-color: rgba(41, 183, 221, 0.37); color : white; height: 100%">
+
+             <form ng-submit="nav.loginUser()">
+               <md-input-container>
+                 <label class="md-hue-1"> Username: </label>
+                 <input ng-model="nav.user.username" type="text" required placeholder="Username..." ng-required="true">
+               </md-input-container>
+
+               <md-input-container>
+                 <label class="md-hue-1"> Password:</label>
+                 <input ng-model="nav.user.password" type="password" required placeholder="Password..." ng-required="true">
+               </md-input-container>
+
+               <!-- Sign in, Close nav, register Buttons: Submit and Register -->
+                    <div style="text-align: center">
+                      <!-- <md-button ng-click="nav.isLogin = false;" class="md-accent md-raised"> Sign Up</md-button> -->
+                      <md-button type="submit" class="md-accent md-raised"> Submit </md-button>
+                    </div>
+             </form>
+
+         <div style="text-align: center">
+           <md-button style="color : white" ng-click="nav.close()" class="md-accent md-flat">Close Sidenav</md-button>
+         </div>
+
+           </md-content>
+         </md-sidenav>
+       </section>
+  </div>
