@@ -26,6 +26,15 @@
 		}).state('Register',{
 			url:'/register',
 			templateUrl:'views/register.html'
+		}).state('SideMenu',{
+			url:'/sidemenu',
+			templateUrl:'views/sidemenu.html'
+		}).state('RequestService',{
+			url:'/requestservice',
+			templateUrl:'views/requestservice.html'
+		}).state('ProvideService',{
+			url:'/provideservice',
+			templateUrl:'views/provideservice.html'
 		});
 		$urlRouterProvider.otherwise('/');
 		$httpProvider.interceptors.push('AuthInterceptor');

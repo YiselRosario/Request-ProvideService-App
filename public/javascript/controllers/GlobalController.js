@@ -8,6 +8,16 @@
     vm.user = {};
     vm.status = UserFactory.status;
 
+//Left Side Menu Button
+		vm.toggleLeft = function () {
+			$mdSidenav('left').toggle();
+		};
+
+// Left SideNav Close button
+    vm.closeLeft = function () {
+      $mdSidenav('left').toggle();
+    };
+
 //SideNav Functionality Button on Index page
     vm.toggleRight = function () {
       $mdSidenav('right').toggle();

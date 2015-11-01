@@ -13,8 +13,8 @@
 
     <form ng-submit="nav.registerUser()">
         <md-input-container>
-          <label  class="md-hue-1"> Full Name: </label>
-          <input ng-model="nav.user.fullName" type="text" required placeholder="Full Name..." ng-required="true">
+          <label  class="md-hue-1"> Full Name </label>
+          <input ng-model="nav.user.fullName" type="text" ng-required="true">
         </md-input-container>
 
         <!-- <md-input-container>
@@ -23,33 +23,33 @@
         </md-input-container> -->
 
         <md-input-container>
-          <label  class="md-hue-1"> Username: </label>
-          <input ng-model="nav.user.username" type="text" required placeholder="Username..." ng-required="true">
+          <label  class="md-hue-1"> Username </label>
+          <input ng-model="nav.user.username" type="text" ng-required="true">
         </md-input-container>
 
         <md-input-container>
-          <label  class="md-hue-1"> E-mail: </label>
-          <input ng-model="nav.user.email" type="text" required placeholder="E-mail..." ng-required="true">
+          <label  class="md-hue-1"> E-mail </label>
+          <input ng-model="nav.user.email" type="text" ng-required="true">
         </md-input-container>
 
         <md-input-container>
-          <label  class="md-hue-1"> Password: </label>
-          <input ng-model="nav.user.password" type="password" required placeholder="Password..." ng-required="true">
+          <label  class="md-hue-1"> Password </label>
+          <input ng-model="nav.user.password" type="password" ng-required="true">
         </md-input-container>
 
         <md-input-container>
-          <label  class="md-hue-1"> Confirm Password: </label>
-          <input ng-model="nav.user.confirmPassword" type="password" required placeholder="Password..." ng-required="true">
+          <label  class="md-hue-1"> Confirm Password </label>
+          <input ng-model="nav.user.confirmPassword" type="password" ng-required="true">
         </md-input-container>
 
         <md-input-container>
-          <label  class="md-hue-1"> City: </label>
-          <input ng-model="nav.user.city" type="text" required placeholder="City..." ng-required="true">
+          <label  class="md-hue-1"> City </label>
+          <input ng-model="nav.user.city" type="text" ng-required="true">
         </md-input-container>
 
         <md-input-container>
-          <label  class="md-hue-1"> Zip Code: </label>
-          <input ng-model="nav.user.zipcode" type="text" required placeholder="Zip Code..." ng-required="true">
+          <label  class="md-hue-1"> Zip Code </label>
+          <input ng-model="nav.user.zipcode" type="text" ng-required="true">
         </md-input-container>
 
         <div ng-show="nav.user.password && nav.user.confirmPassword && !(nav.user.password === nav.user.confirmPassword)" style="color: red">Your passwords must match.</div>
