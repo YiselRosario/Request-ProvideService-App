@@ -25,10 +25,10 @@
           <span ng-show="nav.status.username"> Welcome Back {{nav.status.username}}! </span>
         </h2>
         <span flex=""></span>
-				 <!--TEST BUTTON -->
+				 <!--Register, Sign in, logout BUTTONS -->
 					<md-button ng-click="nav.toggleRightRegister()" class="md-flat" ui-sref="Register">Register</md-button>
-				<!--TEST BUTTON -->
 					<md-button ng-click="nav.toggleRight()" class="md-flat" ui-sref="Login"> Sing In</md-button>
+					<md-button  class="NavFont" ng-click="nav.logout()" ng-show="nav.status.username">Logout</md-button>
 
 
         <!-- <md-button class="md-flat" ui-sref="Login_Register"> Sign Up </md-button>

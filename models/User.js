@@ -3,14 +3,14 @@ var crypto = require('crypto');
 var jwt = require('jsonwebtoken');
 
 var UserSchema = new mongoose.Schema({
-  firstName: {required: true, type: String},
-  lastName: {required: true, type: String},
+  fullName: {required: true, type: String},
+  // lastName: {required: true, type: String},
   username: {required: true, unique: true, type: String, lowercase: true, trim: true},
   email: {required: true, unique: true, type: String, lowercase: true, trim: true},
   passwordHash: String,
   salt: String,
   zipcode: { required: true, type:Number},
-  city: { required: true, type:Number},
+  city: { required: true, type:String},
   photo: String,
   provideService: {type: mongoose.Schema.Types.ObjectId, ref:'ProvideService'},
   requestService: {type: mongoose.Schema.Types.ObjectId, ref:'RequestService'}
@@ -34,7 +34,7 @@ UserSchema.methods.createToken = function() {
     _id: this._id,
     username: this.username,
     email: this.email
-  }, "secret");
+  }, "HelloSecret");
 };
 
 

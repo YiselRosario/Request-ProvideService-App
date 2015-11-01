@@ -14,6 +14,7 @@
 		      o.status.username = null;
 		      o.status._id = null;
 		    };
+
 		    o.registerUser = function(user) {
 		      console.log(user);
 		      var q = $q.defer();
@@ -79,10 +80,9 @@
 				      return decodeURIComponent(escape(window.atob(output))); //polifyll https://github.com/davidchambers/Base64.js
 				    }
 
-				    o.getUser = function() {
-				      return JSON.parse(urlBase64Decode(getToken().split('.')[1]));
-				    };
-
+						o.getUser = function() {
+					      return JSON.parse(urlBase64Decode(getToken().split('.')[1]));
+					    };
 
     return o;
   }

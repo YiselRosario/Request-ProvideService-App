@@ -45,10 +45,10 @@ app.use('/api/provideservice', ProvideServiceRoutes);
 
 
 
-app.use(function(err,req,res,next){
-	console.log(err);
-	res.status(402).send(err);
-});
+// app.use(function(err,req,res,next){
+// 	console.log(err);
+// 	res.status(402).send(err);
+// });
 
 var server = app.listen(port, function() {
 	var host = server.address().address;

@@ -8,6 +8,7 @@
     vm.user = {};
     vm.status = UserFactory.status;
 
+//SideNav Functionality Button on Index page
     vm.toggleRight = function () {
       $mdSidenav('right').toggle();
     };
@@ -15,7 +16,12 @@
     vm.toggleRightRegister = function () {
       $mdSidenav('right').toggle();
     };
+//SideNav Close button
+    vm.close = function () {
+      $mdSidenav('right').toggle();
+    };
 
+//Loggin, Register and logout User.
     vm.logout = function() {
       UserFactory.logout();
       $state.go('Home');
@@ -32,10 +38,6 @@
         $state.go('Home');
         vm.user = {};
       });
-    };
-
-    vm.close = function () {
-      $mdSidenav('right').toggle();
     };
 
 
