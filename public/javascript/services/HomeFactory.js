@@ -5,6 +5,16 @@
 	function HomeFactory($http, $q) {
 		var o = {};
 
+//PUT-EDIT Request by id.
+		o.editRequest = function(newRequestObj, requestId){
+			var q = $q.defer();
+			newRequestObj.requestId = requestId;
+			$http.put('/api/request/', newRequestObj).then(function(res){
+				q.resolve(res.data);
+			});
+			return q.promise;
+		};
+
 //GET REQUEST BY ID to display.
 		o.getRequestById = function(id){
 			console.log(id);

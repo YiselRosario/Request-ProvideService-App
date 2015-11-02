@@ -41,6 +41,9 @@
 		}).state('DetailRequest',{
 			url:'/detailrequest/:id',
 			templateUrl:'views/detailrequest.html'
+		}).state('EditRequest',{
+			url:'/editrequest/:id',
+			templateUrl:'views/editrequest.html'
 		});
 		$urlRouterProvider.otherwise('/');
 		$httpProvider.interceptors.push('AuthInterceptor');

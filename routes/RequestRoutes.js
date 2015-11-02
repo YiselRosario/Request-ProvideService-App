@@ -9,6 +9,18 @@ var auth = jwt({
   secret:'secret'
 });
 
+//PUT - EDIT REQUEST
+router.put('/', function(req, res, next){
+  //console.log(req.body.reviewId);
+  var newRequest = req.body;
+  console.log(newRequest.requestId);
+  Request.update({_id: req.body.requestId}, newRequest, function(err, result){
+    if(err)return next(err);
+    if(!result) return next({err:"The Service Request was not found."});
+    res.send(result);
+  });
+});
+
 //GET REQUEST BY ID TO DISPLAY.
 router.get('/:id', function(req, res, next){
   Request.findOne({_id: req.params.id}, function(err, result){
