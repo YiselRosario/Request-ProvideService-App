@@ -44,6 +44,9 @@
 		}).state('EditRequest',{
 			url:'/editrequest/:id',
 			templateUrl:'views/editrequest.html'
+		}).state('DisplayProvide',{
+			url:'/displayprovide',
+			templateUrl:'views/displayprovide.html'
 		});
 		$urlRouterProvider.otherwise('/');
 		$httpProvider.interceptors.push('AuthInterceptor');

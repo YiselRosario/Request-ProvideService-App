@@ -10,14 +10,15 @@
 		<div class="md-actions" layout="row" layout-wrap>
 			<md-card ng-repeat='r in vm.requests' flex="40" style="background-color: rgb(201, 201, 200)" layout-wrap>
 					<md-card-content>
-						<h3 style="color:rgb(64, 64, 64) ">Requested Service:<span>{{r.RequestedService}}</span></h3>
+            <h3 style="color:rgb(64, 64, 64) "> I Request: <span style="color:rgb(161, 13, 93)">{{r.RequestedService}}</span> Service(s)</h3>
+						<!-- <h3 style="color:rgb(64, 64, 64) ">Requested Service:<span style="rgb(210, 82, 26)">{{r.RequestedService}}</span></h3> -->
             <md-divider> </md-divider>
             <p  style="color:rgb(64, 64, 64) "> Posted By: {{r.nav.status.username}} </p>
             <p  style="color:rgb(64, 64, 64) "> Posted On: {{r.requested | date: "medium"}} </p>
             <p  style="color:rgb(64, 64, 64) "> This Service needs to be completed by: {{r.completed | date: "medium"}} </p>
 			    </md-card-content>
+          <md-divider> </md-divider>
 					<div class="md-actions" layout="row" layout-align="center">
-
 						<md-button ng-show='nav.status.username;' ui-sref="DetailRequest({id: r._id})" class="md-accent md-flat">Check this Review</md-button>
             <md-button ng-show='nav.status.username;' ng-click="vm.deleteRequest(r._id)" class="md-accent md-flat">Delete</md-button>
 					</div>

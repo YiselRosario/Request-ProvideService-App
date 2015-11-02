@@ -7,6 +7,7 @@ var ProvideSchema = new mongoose.Schema({
   thirdEmail: String,
   thirdPhone: Number,
   serviceCost: Number,
+  url: String,
   postedBy: {type: mongoose.Schema.Types.ObjectId, ref:'User'},
   messagesTwo: [{
     postedBy: {type: mongoose.Schema.Types.ObjectId, ref:'User'},
