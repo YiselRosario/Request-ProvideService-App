@@ -2,8 +2,8 @@ var express = require('express');
 var mongoose = require('mongoose');
 var router = express.Router();
 var User = mongoose.model('User');
-var ProvideService = mongoose.model('ProvideService');
-var RequestService = mongoose.model('RequestService');
+var Provide = mongoose.model('Provide');
+var Request = mongoose.model('Request');
 var passport = require('passport');
 
 router.post('/register', function(req, res, next) {

@@ -29,12 +29,18 @@
 		}).state('SideMenu',{
 			url:'/sidemenu',
 			templateUrl:'views/sidemenu.html'
-		}).state('RequestService',{
-			url:'/requestservice',
-			templateUrl:'views/requestservice.html'
-		}).state('ProvideService',{
-			url:'/provideservice',
-			templateUrl:'views/provideservice.html'
+		}).state('CreateRequest',{
+			url:'/createrequest',
+			templateUrl:'views/createrequest.html'
+		}).state('CreateProvide',{
+			url:'/createprovide',
+			templateUrl:'views/createprovide.html'
+		}).state('DisplayRequest',{
+			url:'/displayrequest',
+			templateUrl:'views/displayrequest.html'
+		}).state('DetailRequest',{
+			url:'/detailrequest/:id',
+			templateUrl:'views/detailrequest.html'
 		});
 		$urlRouterProvider.otherwise('/');
 		$httpProvider.interceptors.push('AuthInterceptor');

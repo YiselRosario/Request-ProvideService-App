@@ -6,11 +6,11 @@ var port = process.env.PORT || 3000;
 var passport = require('passport');
 var mongoose = require('mongoose');
 require('./models/User');
-require('./models/ProvideService');
-require('./models/RequestService');
+require('./models/Provide');
+require('./models/Request');
 require('./config/passport');
 
-mongoose.connect('mongodb://localhost/Request-ProvideService');
+mongoose.connect('mongodb://localhost/Request_Provide');
 
 app.set('views', path.join(__dirname, 'views'));
 //set the view engine that will render HTML from the server to the client
@@ -30,8 +30,8 @@ app.use(bodyParser.json());
 app.use(passport.initialize());
 
 var UserRoutes = require('./routes/UserRoutes');
-var RequestServiceRoutes = require('./routes/RequestServiceRoutes');
-var ProvideServiceRoutes = require('./routes/ProvideServiceRoutes');
+var RequestRoutes = require('./routes/RequestRoutes');
+var ProvideRoutes = require('./routes/ProvideRoutes');
 
 
 //on homepage load, render the index page
@@ -40,8 +40,8 @@ app.get('/', function(req, res) {
 });
 
 app.use('/api/user', UserRoutes);
-app.use('/api/requestservice', RequestServiceRoutes);
-app.use('/api/provideservice', ProvideServiceRoutes);
+app.use('/api/request', RequestRoutes);
+app.use('/api/provide', ProvideRoutes);
 
 
 

@@ -1,0 +1,43 @@
+<div ng-controller="DetailRequestController as vm">
+
+    <md-toolbar style="background-color: rgb(25, 161, 140); padding : " class="md-theme-darkr">
+        <h1 style="color : white" class="md-toolbar-tools">Pick up this Request!</h1>
+    </md-toolbar>
+<br>
+    <div layout="row" layout-wrap>
+      <div flex="10"></div>
+      <div flex="">
+      <div class="md-actions" layout="row" layout-wrap class="row-lg-3">
+        <!-- <md-card flex="30"> -->
+        <br>
+        <md-content class="row-lg-3">
+          <h1>Requested Service: {{vm.request.RequestedService}}</h1>
+        <br>
+          <md-divider></md-divider>
+          <h4> Posted By: {{vm.status.username}} </h4>
+          <h4> Posted On: {{vm.request.requested | date:"medium"}} </h4>
+          <h4> This Service needs to be completed by: {{vm.request.completed | date:"medium"}} </h4>
+          <h4> Budget: {{vm.request.budget}} </h4>
+          <md-divider></md-divider>
+          <p>Description: {{vm.request.description}}</p>
+          <md-divider></md-divider>
+          <h3 ng-show='nav.status.username;'> Contact this Person: {{vm.request.secondEmail}} | {{vm.request.secondPhone}} </h3>
+        </md-content>
+        </div>
+        <br>
+        <br>
+
+
+        <div class="md-actions" layout="row" layout-align="center">
+          <md-button ng-show='nav.status.username;' ui-sref="EditReview({id: vm.request._id})" class="md-accent md-flat">Update your Request</md-button>
+          <md-button ng-show='nav.status.username;' ng-click="vm.deleteRequest(r._id)" class="md-accent md-flat">Delete</md-button>
+        </div>
+      <!-- </md-card> -->
+
+
+  </div>
+
+  <div flex="10"></div>
+</div>
+
+</div> <!-- END CONTROLLER -->

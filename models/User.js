@@ -12,8 +12,8 @@ var UserSchema = new mongoose.Schema({
   zipcode: { required: true, type:Number},
   city: { required: true, type:String},
   photo: String,
-  provideService: {type: mongoose.Schema.Types.ObjectId, ref:'ProvideService'},
-  requestService: {type: mongoose.Schema.Types.ObjectId, ref:'RequestService'}
+  provide: {type: mongoose.Schema.Types.ObjectId, ref:'Provide'},
+  request: {type: mongoose.Schema.Types.ObjectId, ref:'Request'}
 });
 
 UserSchema.methods.setPassword = function(password) {
@@ -34,7 +34,7 @@ UserSchema.methods.createToken = function() {
     _id: this._id,
     username: this.username,
     email: this.email
-  }, "HelloSecret");
+  }, "secret");
 };
 
 

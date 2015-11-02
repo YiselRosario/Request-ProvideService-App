@@ -1,0 +1,59 @@
+
+<div ng-controller="CreateRequestController as vm" layout="column" ng-cloak>
+
+  <md-toolbar style="background-color: rgb(25, 161, 140);" class="md-theme-darkr">
+    <h1 style="color : white" class="md-toolbar-tools">Create your Service Request Here!</h1>
+    <h3 class="md-toolbar-tools" ng-show="!(nav.status.username)" style="color: orange">Please, Register to create and add your Service Request</h4>
+  </md-toolbar>
+  <!-- <div ng-show=" nav.status.username !(nav.status.username)" style="color: orange"><h2>Please, Register to create and add your Service Request</h2></div> -->
+
+  <br>
+  <div layout="row" layout-wrap>
+    <!-- <h1 style="color:black; text-align:left;">Product Review here!</h1>
+    <br> -->
+    <div flex="15"></div>
+    <div flex="">
+      <form ng-submit="vm.createRequest();">
+      <md-content layout-padding class="autoScroll">
+
+        <md-input-container>
+          <label class="md-hue-1"> Requested Service </label>
+          <input type="text" ng-model="vm.request.RequestedService">
+        </md-input-container>
+
+        <md-input-container>
+          <label class="md-hue-1"> Description </label>
+          <input ng-model="vm.request.description" type="text">
+        </md-input-container>
+
+        <md-input-container>
+          <label class="md-hue-1"> Day to complete the service </label>
+          <input ng-model="vm.request.completed" type="date">
+        </md-input-container>
+
+        <md-input-container>
+          <label class="md-hue-1"> E-mail </label>
+          <input ng-model="vm.request.secondEmail" type="text">
+        </md-input-container>
+
+        <md-input-container>
+          <label class="md-hue-1"> Phone </label>
+          <input ng-model="vm.request.secondPhone" type="text">
+        </md-input-container>
+
+        <md-input-container>
+          <label class="md-hue-1"> Budget $</label>
+          <input ng-model="vm.request.budget" type="text">
+        </md-input-container>
+
+        <div layout=row style="text-align: center;">
+          <md-button class="md-accent md-raised" ui-sref="Home">Cancel</md-button>
+          <md-button ng-show="nav.status.username" class="md-accent md-raised" type="submit">Submit</md-button>
+        </div>
+        </form>
+      </md-content>
+
+  </div>
+<div flex="15"></div>
+</div>
+</div>
