@@ -11,8 +11,19 @@
 		    vm.request = res;   //at this point I am creating a new variable.
 		  });
 
+		// HomeFactory.getAllRequests().then(function(res){
+		// 	 console.log(res);
+		// 		vm.requests = res;
+		// 	});
 
-
+// //REMOVE-DELETE Review by id from the database.
+// 			vm.deleteRequest = function(requestId){
+// 				console.log(requestId);
+// 				HomeFactory.deleteRequest(requestId).then(function(){
+// 					vm.request.splice(vm.request.indexOf(requestId), 1);
+// 					$state.go('Home');
+// 				});
+// 			};
 
 	}
 })();

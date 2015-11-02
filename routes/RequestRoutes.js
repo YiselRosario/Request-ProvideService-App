@@ -9,6 +9,32 @@ var auth = jwt({
   secret:'secret'
 });
 
+// router.get('/:id', function(req, res, next){
+//   console.log(req.params.id);
+//   Request.findOne({_id: req.params.id}, function(err, result){
+//     if(err) return next(err);
+//     res.send(result);
+//   });
+// });
+
+// //REMOVE-DELETE Request by ID from the database.
+// router.delete('/:id', function(req, res, next){
+//   Request.remove({id: $stateParams.id}, function(err, result){
+//     if(err) return next (err);
+//     res.send();
+//   });
+// });
+
+//DELETE Request from the database.
+router.delete('/:id', function(req, res, next){
+  Request.remove({_id: req.params.id}, function(err, result){
+    console.log(req.params.id, "line 23 route");
+    console.log(result, "line 24 route");
+    if(err) return next (err);
+    res.send();
+  });
+});
+
 //PUT - EDIT REQUEST
 router.put('/', function(req, res, next){
   //console.log(req.body.reviewId);

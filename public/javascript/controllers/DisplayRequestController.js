@@ -11,6 +11,13 @@
 				vm.requests = res;
 			});
 
+//DELETE Review from the database. DELETE BUTTON ON DISPLAY REST POSTS.
+	vm.deleteRequest = function(requestId){
+		HomeFactory.deleteRequest(requestId).then(function(){
+			vm.requests.splice(vm.requests.indexOf(requestId), 1);
+		});
+	};
+
 
 	}
 })();

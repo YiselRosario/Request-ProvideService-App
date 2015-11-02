@@ -5,6 +5,26 @@
 	function HomeFactory($http, $q) {
 		var o = {};
 
+// //REMOVE-DELETE Request by Id from the database.
+// 		o.deleteRequest = function(id){
+// 			console.log(id);
+// 			var q = $q.defer();
+// 			$http.delete('/api/request/:id').then(function(){
+// 				q.resolve();
+// 			});
+// 			return q.promise;
+// 		};
+
+//DELETE review from the database.
+		o.deleteRequest = function(id){
+			console.log(id);
+			var q = $q.defer();
+			$http.delete('/api/request/' + id).then(function(){
+				q.resolve();
+			});
+			return q.promise;
+		};
+
 //PUT-EDIT Request by id.
 		o.editRequest = function(newRequestObj, requestId){
 			var q = $q.defer();

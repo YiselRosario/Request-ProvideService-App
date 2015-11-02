@@ -12,14 +12,14 @@
 					<md-card-content>
 						<h3 style="color:rgb(64, 64, 64) ">Requested Service:<span>{{r.RequestedService}}</span></h3>
             <md-divider> </md-divider>
-            <p  style="color:rgb(64, 64, 64) "> Posted By: {{r.status.username}} </p>
+            <p  style="color:rgb(64, 64, 64) "> Posted By: {{r.nav.status.username}} </p>
             <p  style="color:rgb(64, 64, 64) "> Posted On: {{r.requested | date: "medium"}} </p>
             <p  style="color:rgb(64, 64, 64) "> This Service needs to be completed by: {{r.completed | date: "medium"}} </p>
 			    </md-card-content>
 					<div class="md-actions" layout="row" layout-align="center">
 
 						<md-button ng-show='nav.status.username;' ui-sref="DetailRequest({id: r._id})" class="md-accent md-flat">Check this Review</md-button>
-
+            <md-button ng-show='nav.status.username;' ng-click="vm.deleteRequest(r._id)" class="md-accent md-flat">Delete</md-button>
 					</div>
 				</md-card>
 
