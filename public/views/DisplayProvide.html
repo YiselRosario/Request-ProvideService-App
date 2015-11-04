@@ -1,25 +1,28 @@
 <div ng-controller="DisplayProvideController as vm">
 
-    <md-toolbar style="background-color: rgb(25, 161, 140);" class="md-theme-darkr">
+    <md-toolbar id="TopBarClear" class="md-theme-darkr">
       <h1 style="color : white" class="md-toolbar-tools">Need someone to complete a task? Choose from Here!</h1>
+      <md-input-container>
+        <label class="md-hue-1"> Search </label>
+        <input ng-model="byProvided.ProvidedService" type="text">
+      </md-input-container>
     </md-toolbar>
   	<br>
   	<div layout="row" layout-wrap>
   	  <div flex="10"></div>
   	  <div flex="80">
-  		<div class="md-actions" layout="row" layout-wrap>
-  			<md-card ng-repeat='p in vm.provides' flex="40" style="background-color: rgb(201, 201, 200)" layout-wrap>
+  		<div class="md-actions" layout="row" layout-wrap layout-align="space-around">
+  			<md-card ng-repeat='p in vm.provides | filter: byProvided ' flex="40" style="background-color: rgb(201, 201, 200)" layout-wrap>
   					<md-card-content>
-  						<h3 style="color:rgb(64, 64, 64) "> I Provide: <span style="color:rgb(161, 13, 93)">{{p.ProvidedService}}</span> Service(s)</h3>
+  						<h3 style="color:rgb(64, 64, 64) "> I Provide: <span style="color: rgb(124, 34, 34)">{{p.ProvidedService}}</span> Service(s)</h3>
               <md-divider> </md-divider>
               <p  style="color:rgb(64, 64, 64) "> Posted By: {{p.nav.status.username}} </p>
-              <p  style="color:rgb(64, 64, 64) "> Day Available to help: {{p.availableDates | date: "medium"}} </p>
+              <p  style="color:rgb(64, 64, 64) "> Day Available to help: {{p.completed | date: "medium"}} </p>
               <!-- <p  style="color:rgb(64, 64, 64) "> This Service needs to be completed by: {{r.completed | date: "medium"}} </p> -->
   			    </md-card-content>
             <img class="md-card-imgage" ng-src="{{p.url}}"/>
 
   					<div class="md-actions" layout="row" layout-align="center">
-
   						<md-button ng-show='nav.status.username;' ui-sref="DetailProvide({id: p._id})" class="md-accent md-flat">Check this Profile</md-button>
               <md-button ng-show='nav.status.username;' ng-click="vm.deleteProvide(p._id)" class="md-accent md-flat">Delete</md-button>
   					</div>

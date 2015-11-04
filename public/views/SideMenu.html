@@ -1,4 +1,5 @@
 
+<div id="BackgroundColor">
   <div layout="column" style="height:300px;" ng-cloak>
         <section layout="row" flex>
 
@@ -9,18 +10,30 @@
                <h1 style="color : Black" class="md-toolbar-tools" >Menu</h1>
              </md-toolbar>
 
-             <md-content  layout-padding style="background-color: rgba(41, 183, 221, 0.37); color : white; height: 100%">
+             <md-content  layout-padding style="background-color: rgba(54, 187, 191,0.5); color : white; height: 100%">
 
                <form>
                  <md-input-container>
                    <label class="md-hue-1"> Search </label>
-                   <input type="text">
+                   <input ng-model="" type="text">
                  </md-input-container>
 
                  <!-- Sign in, Close nav, register Buttons: Submit and Register -->
                       <div style="text-align: center">
+                        <br>
+                        <label style="color: rgb(124, 34, 34)"> Create a Request or Profile</label>
                         <md-button ui-sref="CreateRequest" class="md-accent md-flat"> Request Service </md-button>
                         <md-button ui-sref="CreateProvide" class="md-accent md-flat"> Provide Service </md-button>
+                        <br>
+                        <br>
+
+                        <md-divider> </md-divider>
+                        <br>
+
+
+                        <label style="color: rgb(124, 34, 34)">Requested & Provided Services</label>
+                        <md-button ui-sref="DisplayRequest" class="md-accent md-flat"> Requested Service!</md-button>
+              					<md-button ui-sref="DisplayProvide" class=" md-accent md-flat">Provider Profiles </md-button>
                       </div>
                </form>
 <br>
@@ -41,3 +54,4 @@
            </md-sidenav>
          </section>
     </div>
+  </div>

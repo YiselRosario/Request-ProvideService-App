@@ -52,12 +52,27 @@
 .material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }*/
 
 #TopBarClear{
-  background: rgba(25, 193, 215, 0.63);
+  background: rgb(54, 187, 191);
+  opacity: 0.6;
+}
+/*rgba(25, 193, 215, 0.63)*/
+#BackgroundColor{
+  background-image: url("http://www.goodwp.com/images/201407/goodwp.com_31660.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  /*background-repeat: repeat-y;*/
+  height: 660px;
+}
+
+.ClearForm{
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#SecondNavClear{
+  background: rgbargba(215, 174, 26, 0.89);
   opacity: 0.6;
 }
 
-#BackgroundColor{
-  background-color: white;
-  background-size: 1279px 299px;
-  background-image: url("");
+#title{
+  font-family: 'Righteous', cursive;
 }

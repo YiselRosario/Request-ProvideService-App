@@ -1,26 +1,25 @@
-<div ng-controller="HomeController as vm">
+
+<div id="BackgroundColor">
+<div ng-controller="HomeController as vm" id="BackgroundColor">
 			<br>
-			<br>
-			<br>
+		<md-content ng-cloak id="SecondNavClear">
+			<md-toolbar>
+	      <div class="md-toolbar-tools">
+				<h2 style="text-align: center" class="md-toolbar-tools" id="title"> HELP AROUND, a space to Request and Provide Services.</h2>
 
 
-		<md-toolbar class="md-tall md-accent">
-			<span flex></span>
-				<h2 class="md-toolbar-tools-bottom"> How it works! <h2>
+					<md-button ui-sref="DisplayRequest" class="md-accent md-flat"> Requested!</md-button>
+					<md-button ui-sref="DisplayProvide" class=" md-accent md-flat">Provider Profiles </md-button>
+
+				</div>
 		</md-toolbar>
-		<br>
-		<br>
-		<md-toolbar class="md-tall md-primary">
-			<span flex></span>
-    		  <md-button class="md-toolbar-tools-bottom" ui-sref="DisplayRequest" class="md-accent md-flat"> Check all the Requested Services </md-button>
-    </md-toolbar>
-		<br>
-    <br>
-    <md-toolbar class="md-tall md-accent">
-      <span flex></span>
-				<md-button class="md-toolbar-tools-bottom" ui-sref="DisplayProvide" class="md-accent md-flat"> Check Provider Services </md-button>
-		</md-toolbar>
+	</md-content>
 
+<br>
+<!-- <div layout-wrap layout-align="right">
+		<md-button style="color:rgb(39, 171, 171)" class="md-icon-tool" ui-sref="DisplayRequest" class="md-accent md-flat"> Check all the Requested Services </md-button>
+		<md-button style="color:rgb(39, 171, 171)" class="md-icon-tool" ui-sref="DisplayProvide" class=" md-accent md-flat"> Check Provider Services </md-button>
+</div> -->
 
-
+</div>
 </div>

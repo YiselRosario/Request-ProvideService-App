@@ -1,6 +1,6 @@
 <div ng-controller="DetailRequestController as vm">
 
-    <md-toolbar style="background-color: rgb(25, 161, 140); padding : " class="md-theme-darkr">
+    <md-toolbar id="TopBarClear" class="md-theme-darkr">
         <h1 style="color : white" class="md-toolbar-tools">Pick up this Request!</h1>
     </md-toolbar>
 <br>
@@ -11,7 +11,7 @@
         <!-- <md-card flex="30"> -->
         <br>
         <md-content class="row-lg-3">
-          <h1>Requested Service: {{vm.request.RequestedService}}</h1>
+          <h3 style="color:rgb(64, 64, 64) "> I Request: <span style="color: rgb(124, 34, 34)">{{vm.request.RequestedService}}</span> Service(s)</h3>
         <br>
           <md-divider></md-divider>
           <h4> Posted By: {{vm.status.username}} </h4>
@@ -21,7 +21,7 @@
           <md-divider></md-divider>
           <p>Description: {{vm.request.description}}</p>
           <md-divider></md-divider>
-          <h3 ng-show='nav.status.username;'> Contact this Person: {{vm.request.secondEmail}} | {{vm.request.secondPhone}} </h3>
+          <h3 ng-show='nav.status.username;'> E-mail: {{vm.request.secondEmail}} | Phone: {{vm.request.secondPhone}} </h3>
         </md-content>
         </div>
         <br>

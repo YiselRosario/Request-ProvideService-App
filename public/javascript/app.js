@@ -47,6 +47,12 @@
 		}).state('DisplayProvide',{
 			url:'/displayprovide',
 			templateUrl:'views/displayprovide.html'
+		}).state('EditProvide',{
+			url:'/editprovide/:id',
+			templateUrl:'views/editprovide.html'
+		}).state('DetailProvide',{
+			url:'/detailprovide/:id',
+			templateUrl:'views/detailprovide.html'
 		});
 		$urlRouterProvider.otherwise('/');
 		$httpProvider.interceptors.push('AuthInterceptor');

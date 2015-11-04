@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 var ProvideSchema = new mongoose.Schema({
   ProvidedService: {required: true, type:String},
   description: {required: true, type:String},
-  avilableDates: Date,
+  completed: Date,
   thirdEmail: String,
   thirdPhone: Number,
   serviceCost: Number,

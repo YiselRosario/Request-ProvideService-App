@@ -1,0 +1,49 @@
+<div ng-controller="DetailProvideController as vm">
+
+  <md-toolbar id="TopBarClear" class="md-theme-darkr">
+      <h1 style="color : white" class="md-toolbar-tools">Service Provider Profile</h1>
+  </md-toolbar>
+<br>
+  <div layout="row" layout-wrap>
+    <div flex="10"></div>
+    <div flex="">
+    <div class="md-actions" layout="row" layout-wrap class="row-lg-3">
+      <!-- <md-card flex="30"> -->
+      <br>
+      <md-content class="row-lg-3">
+      <div layout="row" layout-wrap layout-align="center">
+        <img class="md-imgage" ng-src="{{vm.provide.url}}"/>
+      </div>
+      <br>
+        <md-divider></md-divider>
+        <h3 style="color:rgb(64, 64, 64) "> I Provide: <span style="color: rgb(124, 34, 34)">{{vm.provide.ProvidedService}}</span> Service(s)</h3>
+      <br>
+        <md-divider></md-divider>
+        <h4 style="color:rgb(64, 64, 64) "> Posted By: {{vm.provide.user.username}} </h4> <!-- vm.user.username  vm.provide.user.username-->
+        <!-- <h4> Posted On: {{vm.request.requested | date:"medium"}} </h4> -->
+        <h4  style="color:rgb(64, 64, 64) "> Day Available to work with you: {{vm.provide.completed | date: "medium"}} </h4>
+        <h4  style="color:rgb(64, 64, 64) "> Service Cost:{{vm.provide.serviceCost}} </h4>
+        <md-divider></md-divider>
+        <p style="color:rgb(64, 64, 64) ">Description: {{vm.provide.description}}</p>
+        <md-divider></md-divider>
+        <h3 ng-show='nav.status.username;' style="color:rgb(64, 64, 64) "> E-mail: {{vm.provide.thirdEmail}} | Phone: {{vm.provide.thirdPhone}} </h3>
+      </md-content>
+      </div>
+      <br>
+      <br>
+
+
+      <div class="md-actions" layout="row" layout-align="center">
+        <md-button ng-show='nav.status.username;' ui-sref="EditProvide({id: vm.provide._id})" class="md-accent md-flat">Edit Profile</md-button>
+        <md-button ng-show='nav.status.username;' ng-click="vm.deleteProvide({id: vm.provide._id})" class="md-accent md-flat">Delete</md-button>
+      </div>
+    <!-- </md-card> -->
+
+
+</div>
+
+<div flex="10"></div>
+</div>
+
+
+</div> <!--END CONTROLLER -->

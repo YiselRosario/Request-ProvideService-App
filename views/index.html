@@ -9,22 +9,27 @@
 	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/animatecss/3.4.0/animate.min.css">
 	<link rel="stylesheet" href="/angular-material/angular-material.css">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href='https://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
 	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.1.2/css/material-design-iconic-font.min.css"> -->
 </head>
-<body ng-controller="GlobalController as nav" id="BackgroundColor">
+<body ng-controller="GlobalController as nav">
 
 <!-- Top Menu Bar with: Title/Brand, Sign Up, Sign In, MenuButton and Logged Person Username-->
-  <md-content ng-cloak="">
+  <md-content ng-cloak="" id="TopBarClear">
     <md-toolbar id="TopBarClear">
       <div class="md-toolbar-tools">
         <md-button class="md-icon-button" ui-sref="SideMenu" ng-click="nav.toggleLeft()">
-        	<i class="material-icons">more_vert</i>
+        	<i class="material-icons">dehaze</i>
         </md-button>
-				<span flex=""></span>
-        <h2 style="color:white">
-          <span ng-show="nav.status.username"> Welcome Back {{nav.status.username}}! </span>
+				<h2 style="color:rgb(46, 46, 47)" class="md-toolbar-tools">
+          <i ng-show="nav.status.username" class="material-icons">person</i><span ng-show="nav.status.username">{{nav.status.username}}</span>
         </h2>
-        <span flex=""></span>
+				<span flex></span>
+
+				<md-button class="md-icon-button" ui-sref="Home">
+						<i class="material-icons">home</i>
+				</md-button>
+
 				 <!--Register, Sign in, logout BUTTONS -->
 					<md-button ng-click="nav.toggleRightRegister()" class="md-flat" ui-sref="Register">Register</md-button>
 					<md-button ng-click="nav.toggleRight()" class="md-flat" ui-sref="Login"> Sing In</md-button>
@@ -37,7 +42,8 @@
     </md-toolbar>
 	</md-content>
 
-	<ui-view></ui-view>
+	<ui-view> </ui-view>
+
 	<!-- Ext Libs -->
 	<script src="angular/angular.min.js"></script>
 	<script src="angular-ui-router/release/angular-ui-router.min.js"></script>
@@ -63,6 +69,10 @@
 												<!-- PROVIDE SERVICE Controllers -->
 	<script src="/javascript/controllers/CreateProvideController.js"></script>
 	<script src="/javascript/controllers/DisplayProvideController.js"></script>
+	<script src="/javascript/controllers/DetailProvideController.js"></script>
+	<script src="/javascript/controllers/EditProvideController.js"></script>
+
+
 
 
 

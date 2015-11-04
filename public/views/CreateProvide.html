@@ -1,7 +1,7 @@
 
   <div ng-controller="CreateProvideController as vm" layout="column" ng-cloak>
 
-    <md-toolbar style="background-color: rgb(25, 161, 140);" class="md-theme-darkr">
+    <md-toolbar id="TopBarClear" class="md-theme-darkr">
       <h1 style="color : white" class="md-toolbar-tools">Create your Profile to Provide Services Here!</h1>
       <h3 class="md-toolbar-tools" ng-show="!(nav.status.username)" style="color: orange">Please, Register to create and add your Provide Service Profile</h4>
     </md-toolbar>
@@ -11,9 +11,9 @@
     <div layout="row" layout-wrap>
       <!-- <h1 style="color:black; text-align:left;">Product Review here!</h1>
       <br> -->
-      <div flex="15"></div>
+      <div flex="10"></div>
       <div flex="">
-        <form ng-submit="vm.createProvide();">
+        <form ng-submit="vm.createProvide();" class="ClearForm">
         <md-content layout-padding class="autoScroll">
 
           <md-input-container>
@@ -33,7 +33,7 @@
 
           <md-input-container>
             <label class="md-hue-1"> Available day to Provide your Service </label>
-            <input ng-model="vm.provide.availableDates" type="date" ng-required="true">
+            <input ng-model="vm.provide.completed" type="date">
           </md-input-container>
 
           <!-- <md-input-container>
@@ -58,7 +58,7 @@
 
           <md-input-container>
             <label class="md-hue-1"> Service Cost $</label>
-            <input ng-model="vm.request.budget" type="text">
+            <input ng-model="vm.provide.serviceCost" type="text">
           </md-input-container>
 
           <div layout=row style="text-align: center;">
@@ -69,7 +69,7 @@
         </md-content>
 
     </div>
-    <div flex="15"></div>
+    <div flex="10"></div>
     </div>
 
 

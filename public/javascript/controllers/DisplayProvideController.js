@@ -11,12 +11,12 @@
 						vm.provides = res;
 					});
 
-		// //DELETE Provide from the database. DELETE BUTTON ON DISPLAY REST POSTS.
-		// 	vm.deleteRequest = function(requestId){
-		// 		HomeFactory.deleteRequest(requestId).then(function(){
-		// 			vm.requests.splice(vm.requests.indexOf(requestId), 1);
-		// 		});
-		// 	};
+		//DELETE Provide from the database. DELETE BUTTON ON DISPLAY REST POSTS.
+			vm.deleteProvide = function(provideId){
+				ProvideFactory.deleteProvide(provideId).then(function(){
+					vm.provides.splice(vm.provides.indexOf(provideId), 1);
+				});
+			};
 
 
 

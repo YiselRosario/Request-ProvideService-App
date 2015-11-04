@@ -6,37 +6,37 @@
 		var o = {};
 
 
-// //DELETE review from the database.
-// 		o.deleteRequest = function(id){
-// 			console.log(id);
-// 			var q = $q.defer();
-// 			$http.delete('/api/request/' + id).then(function(){
-// 				q.resolve();
-// 			});
-// 			return q.promise;
-// 		};
-//
-// //PUT-EDIT Request by id.
-// 		o.editRequest = function(newRequestObj, requestId){
-// 			var q = $q.defer();
-// 			newRequestObj.requestId = requestId;
-// 			$http.put('/api/request/', newRequestObj).then(function(res){
-// 				q.resolve(res.data);
-// 			});
-// 			return q.promise;
-// 		};
-//
-// //GET REQUEST BY ID to display.
-// 		o.getRequestById = function(id){
-// 			console.log(id);
-// 			var q = $q.defer();
-// 			$http.get('/api/request/' + id).then(function(res){
-// 				q.resolve(res.data);
-// 			});
-// 			return q.promise;
-// 		};
-//
-//GET Request from Data Base.
+//DELETE Provide from the database.
+		o.deleteProvide = function(id){
+			console.log(id);
+			var q = $q.defer();
+			$http.delete('/api/provide/' + id).then(function(){
+				q.resolve();
+			});
+			return q.promise;
+		};
+
+//PUT-EDIT PROVIDE by id.
+		o.editProvide = function(newProvideObj, provideId){
+			var q = $q.defer();
+			newProvideObj.provideId = provideId;
+			$http.put('/api/provide/', newProvideObj).then(function(res){
+				q.resolve(res.data);
+			});
+			return q.promise;
+		};
+
+//GET PROVIDE BY ID to display.
+		o.getProvideById = function(id){
+			console.log(id);
+			var q = $q.defer();
+			$http.get('/api/provide/' + id).then(function(res){
+				q.resolve(res.data);
+			});
+			return q.promise;
+		};
+
+//GET PROVIDE PROFILE from Data Base.
 		o.getAllProvides = function(){
 			var q = $q.defer();
 			$http.get('api/provide').then(function(res){

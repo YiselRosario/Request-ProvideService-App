@@ -1,0 +1,76 @@
+<div ng-controller="EditProvideController as vm" layout="column" ng-cloak>
+
+  <md-toolbar id="TopBarClear" class="md-theme-darkr">
+    <h1 style="color : white" class="md-toolbar-tools">Edit and Update your Profile!</h1>
+    <h3 class="md-toolbar-tools" ng-show="!(nav.status.username)" style="color: orange">Please, Register to create and add your Provide Service Profile</h4>
+  </md-toolbar>
+  <!-- <div ng-show=" nav.status.username !(nav.status.username)" style="color: orange"><h2>Please, Register to create and add your Service Request</h2></div> -->
+
+  <br>
+  <div layout="row" layout-wrap>
+    <!-- <h1 style="color:black; text-align:left;">Product Review here!</h1>
+    <br> -->
+    <div flex="15"></div>
+    <div flex="">
+      <form ng-submit="vm.editProvide();">
+      <md-content layout-padding class="autoScroll">
+
+        <md-input-container>
+          <label class="md-hue-1"> What services(s) you Provide? </label>
+          <input type="text" ng-model="vm.newProvide.ProvidedService">
+        </md-input-container>
+
+        <md-input-container md-no-float>
+          <label>Insert your Profile Image (url)</label>
+          <input ng-model="vm.newProvide.url" type="text">
+        </md-input-container>
+
+        <md-input-container>
+          <label class="md-hue-1"> Describe the type of Service that you Provide (Include Education)</label>
+          <input ng-model="vm.newProvide.description" type="text">
+        </md-input-container>
+
+        <md-input-container>
+          <label class="md-hue-1"> Available day to Provide your Service </label>
+          <input ng-model="vm.newProvide.completed" type="date">
+        </md-input-container>
+
+        <!-- <md-input-container>
+          <label class="md-hue-1"> Include any Extra Day here</label>
+          <input ng-model="vm.provide.othersAvailableDates" type="date">
+        </md-input-container>
+
+        <md-input-container>
+          <label class="md-hue-1"> Include any Extra Day here</label>
+          <input ng-model="vm.provide.otherAvailableDates" type="date">
+        </md-input-container> -->
+
+        <md-input-container>
+          <label class="md-hue-1"> E-mail </label>
+          <input ng-model="vm.newProvide.thirdEmail" type="text">
+        </md-input-container>
+
+        <md-input-container>
+          <label class="md-hue-1"> Phone </label>
+          <input ng-model="vm.newProvide.thirdPhone" type="text">
+        </md-input-container>
+
+        <md-input-container>
+          <label class="md-hue-1"> Service Cost $</label>
+          <input ng-model="vm.newProvide.serviceCost" type="text">
+        </md-input-container>
+
+        <div layout=row style="text-align: center;">
+          <md-button class="md-accent md-raised" ui-sref="Home">Cancel</md-button>
+          <md-button ng-show="nav.status.username" class="md-accent md-raised" type="submit">Submit</md-button>
+        </div>
+        </form>
+      </md-content>
+
+  </div>
+  <div flex="15"></div>
+  </div>
+
+
+
+</div> <!--END CONTROLLER -->

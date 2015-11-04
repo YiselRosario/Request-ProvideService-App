@@ -1,16 +1,16 @@
 <div ng-controller="DisplayRequestController as vm">
 
-  <md-toolbar style="background-color: rgb(25, 161, 140); padding : " class="md-theme-darkr">
+  <md-toolbar id="TopBarClear" class="md-theme-darkr">
     <h1 style="color : white" class="md-toolbar-tools">Pick up a Request!</h1>
   </md-toolbar>
 	<br>
 	<div layout="row" layout-wrap>
 	  <div flex="10"></div>
 	  <div flex="80">
-		<div class="md-actions" layout="row" layout-wrap>
+		<div class="md-actions" layout="row" layout-wrap layout-align="space-around">
 			<md-card ng-repeat='r in vm.requests' flex="40" style="background-color: rgb(201, 201, 200)" layout-wrap>
 					<md-card-content>
-            <h3 style="color:rgb(64, 64, 64) "> I Request: <span style="color:rgb(161, 13, 93)">{{r.RequestedService}}</span> Service(s)</h3>
+            <h3 style="color:rgb(64, 64, 64) "> I Request: <span style="color: rgb(124, 34, 34)">{{r.RequestedService}}</span> Service(s)</h3>
 						<!-- <h3 style="color:rgb(64, 64, 64) ">Requested Service:<span style="rgb(210, 82, 26)">{{r.RequestedService}}</span></h3> -->
             <md-divider> </md-divider>
             <p  style="color:rgb(64, 64, 64) "> Posted By: {{r.nav.status.username}} </p>
