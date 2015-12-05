@@ -16,7 +16,6 @@
 			'default': '600' // use shade 200 for default, and keep all other shades the same
 		});
 
-
 		$stateProvider.state('Home',{
 			url: '/',
 			templateUrl: 'views/Home.html'
