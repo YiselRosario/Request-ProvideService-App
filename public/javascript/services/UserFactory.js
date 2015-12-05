@@ -16,7 +16,7 @@
 		    };
 
 		    o.registerUser = function(user) {
-		      console.log(user);
+		      //console.log(user);
 		      var q = $q.defer();
 		      $http.post('/api/user/register', user).then(function(res) {
 		        setToken(res.data);

@@ -1,3 +1,7 @@
+if(process.env.NODE_ENV !== "production"){
+	require("dotenv").load();
+}
+
 var express = require('express');
 var path = require('path');
 var bodyParser = require('body-parser');
@@ -10,7 +14,10 @@ require('./models/Provide');
 require('./models/Request');
 require('./config/passport');
 
-mongoose.connect('mongodb://localhost/Request_Provide');
+
+
+// mongoose.connect('mongodb://localhost/Request_Provide');
+mongoose.connect(process.env.MONGO_STRING);
 
 app.set('views', path.join(__dirname, 'views'));
 //set the view engine that will render HTML from the server to the client
