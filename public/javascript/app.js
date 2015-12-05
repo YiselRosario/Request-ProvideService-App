@@ -19,40 +19,40 @@
 
 		$stateProvider.state('Home',{
 			url: '/',
-			templateUrl: 'views/home.html'
+			templateUrl: 'views/Home.html'
 		}).state('Login',{
 			url:'/login',
-			templateUrl:'views/login.html'
+			templateUrl:'views/Login.html'
 		}).state('Register',{
 			url:'/register',
-			templateUrl:'views/register.html'
+			templateUrl:'views/Register.html'
 		}).state('SideMenu',{
 			url:'/sidemenu',
-			templateUrl:'views/sidemenu.html'
+			templateUrl:'views/SideMenu.html'
 		}).state('CreateRequest',{
 			url:'/createrequest',
-			templateUrl:'views/createrequest.html'
+			templateUrl:'views/CreateRequest.html'
 		}).state('CreateProvide',{
 			url:'/createprovide',
-			templateUrl:'views/createprovide.html'
+			templateUrl:'views/CreateProvide.html'
 		}).state('DisplayRequest',{
 			url:'/displayrequest',
-			templateUrl:'views/displayrequest.html'
+			templateUrl:'views/DisplayRequest.html'
 		}).state('DetailRequest',{
 			url:'/detailrequest/:id',
-			templateUrl:'views/detailrequest.html'
+			templateUrl:'views/DetailRequest.html'
 		}).state('EditRequest',{
 			url:'/editrequest/:id',
-			templateUrl:'views/editrequest.html'
+			templateUrl:'views/EditRequest.html'
 		}).state('DisplayProvide',{
 			url:'/displayprovide',
-			templateUrl:'views/displayprovide.html'
+			templateUrl:'views/DisplayProvide.html'
 		}).state('EditProvide',{
 			url:'/editprovide/:id',
-			templateUrl:'views/editprovide.html'
+			templateUrl:'views/EditProvide.html'
 		}).state('DetailProvide',{
 			url:'/detailprovide/:id',
-			templateUrl:'views/detailprovide.html'
+			templateUrl:'views/DetailProvide.html'
 		});
 		$urlRouterProvider.otherwise('/');
 		$httpProvider.interceptors.push('AuthInterceptor');
